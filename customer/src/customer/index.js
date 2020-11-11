@@ -52,8 +52,11 @@ $(document).ready(a => {
 $(function() {
   $('#contactDetails').submit(function(e) {
     e.preventDefault();
-    var customerName = $('#firstName').val();
-    var username = $('#username').val();
+    //var customerName = $('#firstName').val();
+    //var username = $('#username').val();
+    var customerName = (Math.random()).toString();
+    var username = (Math.random()).toString();
+
     if (!customerName || !username) {
       alert('you must enter a name & username');
       document.getElementById('contactDetails').reset();
