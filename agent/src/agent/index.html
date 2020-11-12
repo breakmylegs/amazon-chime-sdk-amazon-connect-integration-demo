@@ -1,50 +1,93 @@
+<!-- Video Overlay Page For Amazon Conneect Agent
+   Update Author - Peter Kelly
+   Date - 12/11/2020
+
+  This file provides the video overlay for video and
+  video controls for Amazon Connect Agents
+-->
+
+
 <!DOCTYPE html>
 <html>
+  <!-- ** HEAD Start ** -->
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chime Connect Demo - Agent</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Amazon Chime - Agent Video</title>
+
+    <!-- Set the CSS Stylesheet-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <!-- Standard Jquery Script references -->
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
   </head>
+  <!-- ** HEAD End ** -->
+
+  <!-- ** BODY Start ** -->
   <body>
+
+    <!-- DIVISION for the agent chat window-->
     <div id="agent-chat-window"></div>
+
+    <!-- DIVISION for the Meeting ended message-->
     <div class="alert-agent-end-meeting alert alert-primary" role="alert">
       Meeting ended successfully!
     </div>
-    <button type="button" class="btn btn-primary btn-toggle-video btn-sm">Join Video</button>
+
+    <!-- BUTTON to allow the agent to join the video meeting-->
+    <button type="button" class="btn btn-primary btn-toggle-video btn-sm">
+      Join Video
+    </button>
+
+    <!-- DIVISION to hold the Agent & Customer video and controls -->
     <div class="agent-view">
+
+      <!-- AUDIO for voice properties -->
       <audio class="help-desk-audio"></audio>
+
+      <!-- DIVISION for the Customer side of the video-->
       <div class="video-wrapper">
         <div class="div-help-desk-remote-video">
           <div class="video-loader remote-video-loader"></div>
           <video class="help-desk-remote-video"></video>
           <div class="video-tile--nameplate"><p>Customer</p></div>
         </div>
+
+        <!-- DIVISION for the Agent side of the video -->
         <div class="div-help-desk-local-video">
           <div class="video-loader local-video-loader"></div>
           <video class="help-desk-local-video"></video>
           <div class="video-tile--nameplate"><p>Me</p></div>
         </div>
+
+        <!-- DIVISION and BUTTONs for control of the video and audio-->
         <div class="meeting-controls">
           <button class="controlBtn">
-            <img src="../assets/mic.svg" alt="">
+            <img src="../assets/mic.svg" alt="" />
           </button>
           <button class="controlBtn">
-            <img src="../assets/volume.svg" alt="">
+            <img src="../assets/volume.svg" alt="" />
           </button>
           <button class="controlBtn">
-            <img src="../assets/screen-share.svg" alt="">
+            <img src="../assets/screen-share.svg" alt="" />
           </button>
           <button class="controlBtn btn-end-meeting">
-            <img src="../assets/hang-off.svg" alt="">
+            <img src="../assets/hang-off.svg" alt="" />
           </button>
         </div>
       </div>
     </div>
-    
+
+    <!-- Reference the agent-bundle javascript-->
     <script type="text/javascript" src="/agent-bundle.js"></script>
   </body>
 </html>
